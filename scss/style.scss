@@ -1,1 +1,228 @@
-// Styles
+@import "normalize.scss";
+@import "fonts.scss";
+@import "variables.scss";
+
+* {
+  transition: all 0.2s ease-in;
+}
+
+*::before,
+*::after {
+  transition: all 0.2s ease-in;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: rgba(249, 248, 251, 0.9);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  &-wrap {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 2vw 0 2vw;
+  }
+  .logo {
+    font-family: $font-logo;
+    font-size: 50px;
+  }
+  #header__burger-input {
+    visibility: hidden;
+  }
+  &__burger {
+    display: none;
+    align-items: center;
+    position: absolute;
+    right: 5%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 9;
+    border-radius: 3px;
+    padding: 3px;
+  }
+
+  &__burger span,
+  &__burger span::before,
+  &__burger span::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(0, 0, 0, 1);
+  }
+
+  &__burger span::before {
+    content: "";
+    top: -10px;
+  }
+
+  &__burger span::after {
+    content: "";
+    top: 10px;
+  }
+
+  #header__burger-input:checked ~ .header-nav {
+    visibility: visible;
+    top: 0;
+  }
+
+  #header__burger-input:checked ~ .header__burger span {
+    transform: rotate(-45deg);
+    background: rgba(255, 255, 255, 1);
+  }
+
+  #header__burger-input:checked ~ .header__burger span::before {
+    visibility: hidden;
+  }
+  #header__burger-input:checked ~ .header__burger span::after {
+    transform: rotate(90deg);
+    top: 0;
+    background: rgba(255, 255, 255, 1);
+  }
+
+  &-nav {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 50%;
+    font-family: $font-title-bold;
+    font-size: 16px;
+    padding: 0;
+    &__link {
+      color: rgba(0, 0, 0, 1);
+      text-decoration: none;
+      &:hover {
+        border-top: 3px solid rgba(255, 96, 51, 1);
+        color: rgba(0, 0, 0, 1);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+main {
+  .get-fresh {
+    background-image: url(../img/block1-background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    padding: 0 2vw 0 2vw;
+    &-wrapper {
+      display: flex;
+      align-items: center;
+      max-width: 1170px;
+      margin: 0 auto;
+      height: 100%;
+    }
+    &__info-block {
+      width: 60%;
+    }
+    &__title {
+      font-family: $font-heavy;
+      font-size: 60px;
+      margin: 0;
+    }
+    &__text {
+      width: 80%;
+      font-size: 17px;
+    }
+    &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 55px;
+      box-shadow: 0px 0px 2px 2px gray;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 1);
+      padding: 12px;
+      font-size: 20px;
+      font-family: $font-text-light;
+      background-color: rgba(255, 96, 51, 1);
+      text-decoration: none;
+      &:hover {
+        text-decoration: none;
+        background: rgb(0, 0, 0);
+        color: rgba(255, 255, 255, 1);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .header {
+    .logo {
+      font-size: 30px;
+    }
+    &__burger {
+      display: flex;
+    }
+
+    &-nav {
+      position: absolute;
+      top: -100%;
+      right: 0;
+      visibility: hidden;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 270px;
+      background: rgba(38, 38, 38, 1);
+      color: rgba(255, 255, 255, 1);
+      margin: 0;
+      padding: 0;
+      font-size: 19px;
+      &__item {
+        height: 42px;
+        width: 75%;
+      }
+      &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        color: rgba(255, 255, 255, 1);
+        text-align: center;
+        &:hover {
+          background: rgba(255, 255, 255, 1);
+          text-decoration: none;
+          border: none;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    .get-fresh {
+      &-wrapper {
+        justify-content: center;
+      }
+      &__info-block {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      &__title {
+        text-align: center;
+      }
+      &__text {
+        text-align: center;
+        width: 80%;
+      }
+      &__button {
+        width: 150px;
+        height: 30px;
+        font-size: 13px;
+      }
+    }
+  }
+}
