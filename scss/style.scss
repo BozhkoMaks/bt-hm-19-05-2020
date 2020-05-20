@@ -226,3 +226,166 @@ main {
     }
   }
 }
+
+.about-us {
+  background: #00b1b1;
+  color: #fff;
+
+  &-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 100%;
+  }
+
+  &-content {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  
+}
+
+  &__item {
+  width: 44%;
+  
+  & img {    
+      width: 80%;
+      text-align: center;}
+  }
+
+  &__title {
+    font-family: $font-title-bold;
+    font-size: 60px;
+    letter-spacing: 6px;
+  }
+  &__text {
+      font-family: $font-text-light;
+      line-height: 26px;
+      font-size: 16px;
+  }
+
+}
+
+@media screen and (max-width:768px) {
+  .about-us__item {
+      width:auto;
+      text-align: center;
+      padding: 0 30px;
+  & img {
+    width: 64%;
+  }
+    
+  &:first-child {
+      order: 2;
+  }
+}
+}
+
+.our-service {
+  position: relative;
+  background: #70bfff;
+  z-index: -2;
+
+  &-wrapper {
+  display: flex;
+  align-items: center;
+  max-width: 1170px;
+  margin: 0 auto;
+  height: 100%;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  &__item {
+  width: 49%;
+  position: relative;
+  text-align: center; 
+  }
+  &__list {
+  list-style-type: none;
+  display: inline-block;
+  padding-inline-start: 0;
+
+& li {
+  display: flex;
+  position: relative;
+  margin: 10px 0;
+  padding: 25px;
+  font-family: $font-title-bold;
+  color: #262626;
+  background: #fff;
+  font-size: 14px;
+  box-shadow: 0px 2px 3px 0px #333;
+}
+&_text {
+  width:75%;
+}
+&_icon::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 208px;
+  height: 100%;
+  background: #9d9d9d;
+  width: 1px; 
+
+  }
+}
+&__title {
+  font-family: $font-title-bold;
+  font-size: 60px;
+  letter-spacing: 6px;
+  color: #fff;
+  
+  
+}
+&__img {
+  width: 47%;
+  position: absolute;
+  bottom: -75px;
+  right: 205px;
+  z-index: -1;
+  
+  @media screen and (max-width:992px)
+  { giwidth: 48%;
+    top: 1%;
+    right: 27%;}
+
+    @media screen and (max-width:776px)
+    { width: 67%;
+      top: 0%;
+      right: 18%;}
+}
+}
+
+@media screen and (max-width:992px) {
+  .our-service__item {
+      width:100%;
+      text-align: center;
+  }
+    
+.our-service__item:first-child {
+  order: 2;
+}
+}
+
+.icon {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: #262626;
+  position: absolute;
+  right: 15px;
+  top: 11px;
+}
+
+.icon1 {
+  top: 21px;
+}
