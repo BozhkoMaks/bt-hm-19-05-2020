@@ -896,7 +896,7 @@ main .article-3 {
 }
 @media screen and (max-width: 992px) {
   .our-service__img {
-    giwidth: 48%;
+    width: 48%;
     top: 1%;
     right: 27%;
   }
