@@ -389,3 +389,238 @@ main {
 .icon1 {
   top: 21px;
 }
+
+.gallery {
+  background: #ffe92f;
+  padding-bottom: 5%;
+  min-height: 180vh;
+  &-content {
+      width: 44%;
+      margin: 0 auto;
+      color: $color-dark;
+      text-align: center;
+      &__title {
+          font-family: $font-title-bold;
+          font-size: 90px;
+          color: $color-dark;
+          padding-top: 15%;
+          margin: 0;
+      }
+      &__text {
+        font-family: $font-text-light;
+        font-size: 17px;
+        line-height: 24px;
+      }
+  }
+  &-container{
+    display: flex;
+    justify-content: space-between;
+      flex-direction: column;
+      max-width: 1170px;
+      width: 80%;
+      height: 130vh;
+      margin: 3% auto;
+      &_upper {
+        display: flex;
+        justify-content: space-between;
+          width: 100%;
+          height: 56%;
+          &__item_big {
+              width: 68%;
+              background: url("../img/peach.png") no-repeat;
+              background-size: cover;
+              box-shadow: $box-shadow;
+          }
+          &_small {
+            display: flex;
+            justify-content: space-between;
+              flex-direction: column;
+              width: 30%;
+          }
+      }
+      &__item_small1, &__item_small2 {
+                  display: flex;
+                  height: 48%;
+                  background: url("../img/blueberry-small.png") no-repeat;
+                  background-size: cover;
+                  box-shadow: $box-shadow;
+              }
+      &__item_small2 {
+                  background: url("../img/mulberries.png") no-repeat; 
+                  background-size: cover;      
+  }
+      &_under {
+        display: flex;
+        justify-content: space-between;
+          width: 100%;
+          height: 41.5%;
+          &__item, &__item1 {
+              display: flex;
+              width: 48.9%;
+              background: url("../img/plate-berries.png") no-repeat;
+              background-size: cover;
+              box-shadow: $box-shadow;
+          }
+          &__item1 {
+              background: url("../img/persimmon.png") no-repeat;
+              background-size: cover;
+          }
+      }    
+  }
+  &__button {
+    display: block;
+    margin: 0 auto;
+    font-family: $font-text-light;
+    font-size: 20px;
+    color: $color-light;
+    padding: 1% 2%;
+    border: none;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    background: #5585a2; 
+  }
+}
+
+@media screen and (max-width:992px) {
+  .gallery {
+  height: 340vh;
+  &-content {
+      width: 80%;
+      margin: 0 auto;
+      &__title {
+          font-size: 60px;
+      }
+  }
+  &-container{
+      align-items: center;
+      flex-direction: column;
+      width: 50%;
+      height: 80%;
+      &_upper {
+          height: 60%;
+          margin: 5% auto;
+          flex-direction: column;
+          align-items: center;
+          &__item_big {
+              display: flex;
+              width: 100%;
+              height: 31%;
+          }
+          &_small {
+              width: 100%;
+              height: 67%;
+              align-items: center;
+              justify-content: space-around;        
+          }
+      }
+      &__item_small1, &__item_small2 {
+                  height: 43%;
+                  width: 100%;
+              }
+      &_under {
+          flex-direction: column;
+          justify-content: space-between;
+          width: 100%;
+          height: 40%;
+          &__item, &__item1 {
+              height: 46.5%;
+              width: 100%;
+          }
+      }    
+  }
+  &__button {
+      width: 80%;
+      padding: 2%;
+  }
+}
+}
+@media screen and (max-width:776px) {
+  .gallery {
+    height: 300vh;
+    &-container{
+      width: 70%;
+    }
+}
+}
+@media screen and (max-width:576px) {
+  .gallery {
+    height: 320vh;
+    &-container{
+      width: 80%;
+    }
+}
+}
+
+.subscribe {
+  background: url("../img/background-blueberry.png") no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 60vh;
+  &-content {
+      width: 60%;
+      margin: 12%;
+      margin-left: 10%;
+      color: $color-dark;
+      &__title {
+          font-family: $font-title-bold;
+          font-size: 40px;
+      }
+      &__text {
+          font-family: $font-text-light;
+          font-size: 17px;
+          line-height: 24px;
+          display: flex;
+          width: 70%;
+          margin: 2% 0;
+      }
+  }
+  &__input {
+      width: 68%;
+      padding: 1.5%;
+      margin: 3%;
+      &::placeholder {
+        font-family: $font-text-light;
+        font-size: 17px;
+        line-height: 24px;
+      }
+  }
+  &__button {
+      font-family: $font-text-light;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      background: #96b92c;
+      color: $color-light;
+      margin-left: 3%;
+      box-shadow: 1px 5px 8px rgba(255, 255, 255, 0.945);
+      padding: 1.5% 3%; 
+  }   
+}
+
+@media screen and (max-width:776px) {
+.subscribe{
+  background-size: 150%;
+  background-position: right bottom;
+  padding: 7% 0;
+  height: 80vh;
+  &-content {
+      width: 80%;
+      margin: 0 auto;
+      &__text {
+          width: 100%;
+      }
+  }
+  &-form {
+      display: flex;
+      flex-direction: column;
+  }
+  &__input {
+      width: 90%;
+      padding: 3% 4%;
+      margin: 5% 0;
+  }
+  &__button {
+      margin: 0;   
+  }   
+}
+}
